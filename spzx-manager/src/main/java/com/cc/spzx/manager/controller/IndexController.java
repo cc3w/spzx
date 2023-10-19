@@ -9,6 +9,7 @@ import com.cc.spzx.model.vo.common.Result;
 import com.cc.spzx.model.vo.common.ResultCodeEnum;
 import com.cc.spzx.model.vo.system.LoginVo;
 import com.cc.spzx.model.vo.system.ValidateCodeVo;
+import com.cc.spzx.utils.AuthContextUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,12 +34,20 @@ public class IndexController {
         return Result.build(null, ResultCodeEnum.SUCCESS);
     }
 
+      //两种方式，第一种从HttpServletRequest中取出请求头的token，request.getHeader("token");第二种如下
+//    @Operation(summary = "获取用户信息")
+//    @GetMapping("/getUserInfo")
+//    public Result<SysUser> getUserInfo(@RequestHeader(name = "token") String token) {
+//        SysUser userInfo = sysUserService.getUserInfo(token);
+//        return Result.build(userInfo, ResultCodeEnum.SUCCESS);
+//    }
+
     @Operation(summary = "获取用户信息")
     @GetMapping("/getUserInfo")
-    public Result<SysUser> getUserInfo(@RequestHeader(name = "token") String token) {
-        SysUser userInfo = sysUserService.getUserInfo(token);
-        return Result.build(userInfo, ResultCodeEnum.SUCCESS);
+    public Result<SysUser> getUserInfo() {
+        return Result.build(AuthContextUtil.get(), ResultCodeEnum.SUCCESS);
     }
+
 
     @Operation(summary = "验证码")
     @GetMapping("/generateValidateCode")

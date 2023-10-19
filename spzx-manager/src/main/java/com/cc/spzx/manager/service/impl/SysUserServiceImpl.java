@@ -73,7 +73,7 @@ public class SysUserServiceImpl implements SysUserService {
 
         //7.将token放到redis中
         String temp_token = "user:login:" + token;
-        redisTemplate.opsForValue().set(temp_token, JSON.toJSONString(sysUser), 3, TimeUnit.DAYS);
+        redisTemplate.opsForValue().set(temp_token, JSON.toJSONString(sysUser), 30, TimeUnit.MINUTES);
 
         //返回loginvo对象
         LoginVo loginVo = new LoginVo();
