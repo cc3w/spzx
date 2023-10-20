@@ -9,8 +9,35 @@
     <sql id="columns">
         id,role_name,role_code,description,create_time,update_time,is_deleted
     </sql>
-    
 
+<!--    添加角色-->
+    <insert id="saveSysRole">
+        insert into sys_role(id, role_name, role_code, description)
+        values (#{id}, #{roleName}, #{roleCode}, #{description})
+    </insert>
+
+<!--    修改角色-->
+    <update id="updateSysRole">
+        update sys_role set
+        <if test="roleName != null and roleName != ''">
+            role_name = #{roleName},
+        </if>
+        <if test="roleCode != null and roleCode != ''">
+            role_code = #{roleCode},
+        </if>
+        <if test="description != null and description != ''">
+            description = #{description},
+        </if>
+        update_time = now()
+        where id = #{id}
+    </update>
+    <update id="deleteById">
+        update sys_role set is_deleted = 1
+        where id = #{id};
+    </update>
+
+
+    <!--    根据角色模糊查询-->
     <select id="findByPage" resultType="com.cc.spzx.model.entity.system.SysRole">
         select <include refid="columns" /> from sys_role
         <where>

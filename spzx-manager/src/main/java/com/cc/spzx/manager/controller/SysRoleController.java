@@ -1,5 +1,6 @@
 package com.cc.spzx.manager.controller;
 
+import ch.qos.logback.core.pattern.util.RegularEscapeUtil;
 import com.cc.spzx.manager.service.SysRoleService;
 import com.cc.spzx.model.dto.system.SysRoleDto;
 import com.cc.spzx.model.entity.system.SysRole;
@@ -18,6 +19,26 @@ public class SysRoleController {
 
     @Autowired
     private SysRoleService sysRoleService;
+
+
+    @DeleteMapping("/deleteById/{roleId}")
+    public Result deleteById(@PathVariable("roleId") Long id) {
+        sysRoleService.deleteById(id);
+        return Result.build(null, ResultCodeEnum.SUCCESS);
+    }
+
+    @PutMapping("/updateSysRole")
+    public Result updateSysRole(@RequestBody SysRole sysRole) {
+        sysRoleService.updateSysRole(sysRole);
+        return Result.build(null, ResultCodeEnum.SUCCESS);
+    }
+
+    @PostMapping("/saveSysRole")
+    public Result saveSysRole(@RequestBody SysRole sysRole) {
+        sysRoleService.saveSysRole(sysRole);
+        return Result.build(null, ResultCodeEnum.SUCCESS);
+    }
+
 
     @Operation(summary = "根据角色名模糊查询")
     @PostMapping("/findByPage/{pageNum}/{pageSize}")

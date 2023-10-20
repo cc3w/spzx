@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="完成登录校验，实现了拦截器，自定义配置文件的读取，将用户信息保存在ThreadLocal中，在maven中添加了configuration-processor依赖">
+    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="实现了对用户角色的模糊查询，取消了对swagger的拦截">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/cc/spzx/common/config/Knife4jConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/cc/spzx/common/config/Knife4jConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/config/WebMvcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/config/WebMvcConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/interceptor/LoginAuthInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/interceptor/LoginAuthInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/ValidateCodeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/ValidateCodeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysRoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/role/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/role/SysRoleMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +109,7 @@
       <updated>1697596165038</updated>
       <workItem from="1697596166118" duration="26602000" />
       <workItem from="1697678251787" duration="28223000" />
-      <workItem from="1697765614809" duration="4699000" />
+      <workItem from="1697765614809" duration="11231000" />
     </task>
     <task id="LOCAL-00001" summary="已实现登录，登录信息的获取，验证码，退出登录">
       <created>1697687899949</created>
@@ -127,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697704198227</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="实现了对用户角色的模糊查询，取消了对swagger的拦截">
+      <created>1697772644107</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697772644107</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +141,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="已实现登录，登录信息的获取，验证码，退出登录" />
     <MESSAGE value="完成登录校验，实现了拦截器，自定义配置文件的读取，将用户信息保存在ThreadLocal中，在maven中添加了configuration-processor依赖" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成登录校验，实现了拦截器，自定义配置文件的读取，将用户信息保存在ThreadLocal中，在maven中添加了configuration-processor依赖" />
+    <MESSAGE value="实现了对用户角色的模糊查询，取消了对swagger的拦截" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了对用户角色的模糊查询，取消了对swagger的拦截" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

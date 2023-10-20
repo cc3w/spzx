@@ -15,4 +15,29 @@ public interface SysRoleService {
 
     PageInfo<SysRole> findByPage(Integer pageNum, Integer pageSize, SysRoleDto sysRoleDto);
 
+    /**
+     * desc 添加角色
+     * date 2023/10/20
+     * @author cc
+     * @return
+     **/
+    void saveSysRole(SysRole sysRole);
+
+    /**
+     * desc 修改角色
+     * date 2023/10/20
+     * @author cc
+     * @return
+     **/
+
+    void updateSysRole(SysRole sysRole);
+
+    /**
+     * desc 根据id进行逻辑删除
+     * date 2023/10/20
+     * @author cc
+     * @return
+     **/
+    void deleteById(Long id);
+
 }
