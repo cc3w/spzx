@@ -83,6 +83,7 @@ public class SysUserServiceImpl implements SysUserService {
         return loginVo;
     }
 
+    //已经没用了此方法
     @Override
     public SysUser getUserInfo(String token) {
         String s = redisTemplate.opsForValue().get(token);

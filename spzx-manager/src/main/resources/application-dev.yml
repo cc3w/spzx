@@ -7,12 +7,12 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.44.134:3306/db_spzx?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://192.168.44.136:3306/db_spzx?characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
     username: root
     password: 1234
   data:
     redis:
-      host: 192.168.44.134
+      host: 192.168.44.136
       port: 6379
 
 
@@ -27,4 +27,8 @@ spzx:
     noAuthUrls:
       - /admin/system/index/login
       - /admin/system/index/generateValidateCode
+      - /swagger-resources/**
+      - /webjars/**
+      - /v3/**
+      - /doc.html/**
 

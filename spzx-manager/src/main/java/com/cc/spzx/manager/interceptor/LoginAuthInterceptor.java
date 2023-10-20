@@ -50,7 +50,7 @@ public class LoginAuthInterceptor implements HandlerInterceptor {
         //redis中有值，将数据存在ThreadLocal中并延长过期时间
         SysUser sysUser = JSON.parseObject(s, SysUser.class);
         AuthContextUtil.set(sysUser);
-        redisTemplate.expire(token, 30, TimeUnit.SECONDS);
+        redisTemplate.expire(token, 30, TimeUnit.MINUTES);
 
         //放行
         return true;

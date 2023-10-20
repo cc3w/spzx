@@ -21,5 +21,12 @@ public interface SysUserService {
     public SysUser getUserInfo(String token);
 
 
+    /**
+     * desc 注销用户，删除redis中的key
+     * date 2023/10/20
+     * @author cc
+     * @return
+     **/
+
     public void logout(String token);
 }
