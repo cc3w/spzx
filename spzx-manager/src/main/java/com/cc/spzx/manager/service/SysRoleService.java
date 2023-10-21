@@ -1,8 +1,11 @@
 package com.cc.spzx.manager.service;
 
+import com.cc.spzx.model.dto.system.AssignRoleDto;
 import com.cc.spzx.model.dto.system.SysRoleDto;
 import com.cc.spzx.model.entity.system.SysRole;
 import com.github.pagehelper.PageInfo;
+
+import java.util.HashMap;
 
 public interface SysRoleService {
 
@@ -39,5 +42,15 @@ public interface SysRoleService {
      * @return
      **/
     void deleteById(Long id);
+
+    /**
+     * desc 查询所有角色
+     * date 2023/10/21
+     * @author cc
+     * @return String
+     **/
+
+    HashMap<String, Object> findAllRoles(Long userId);
+
 
 }

@@ -49,4 +49,11 @@
         order by id desc
     </select>
 
+<!--    查询所有用户-->
+    <select id="findAllRoles" resultType="com.cc.spzx.model.entity.system.SysRole">
+        select <include refid="columns"/>
+        from sys_role
+        where is_deleted = 0
+    </select>
+
 </mapper>
