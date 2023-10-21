@@ -1,22 +1,22 @@
 package com.cc.spzx.manager.service.impl;
 
-
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
 import com.cc.spzx.common.exception.ccException;
 import com.cc.spzx.manager.mapper.SysUserMapper;
 import com.cc.spzx.manager.service.SysUserService;
 import com.cc.spzx.model.dto.system.LoginDto;
+import com.cc.spzx.model.dto.system.SysUserDto;
 import com.cc.spzx.model.entity.system.SysUser;
 import com.cc.spzx.model.vo.common.ResultCodeEnum;
 import com.cc.spzx.model.vo.system.LoginVo;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
-import org.springframework.util.StringUtils;
-
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -29,6 +29,28 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Autowired
     RedisTemplate<String, String> redisTemplate;
+
+    @Override
+    public void updateSysUser(SysUser sysUser) {
+        sysUserMapper.updateSysUser(sysUser);
+    }
+
+    @Override
+    public void saveSysUser(SysUser sysUser) {
+        SysUser db_sysUser = sysUserMapper.selectUserInfoByUserName(sysUser.getUserName());
+        if(db_sysUser != null)
+            throw new ccException(ResultCodeEnum.USER_NAME_IS_EXISTS);
+        String password = sysUser.getPassword();
+        String s = DigestUtils.md5DigestAsHex(password.getBytes());
+        sysUser.setPassword(s);
+        sysUser.setStatus(0);
+        sysUserMapper.saveSysUser(sysUser);
+    }
+
+    @Override
+    public void deleteSysUser(Long userId) {
+        sysUserMapper.deleteSysUser(userId);
+    }
 
     //用户登录
     @Override
@@ -81,6 +103,14 @@ public class SysUserServiceImpl implements SysUserService {
         loginVo.setRefresh_token("");
 
         return loginVo;
+    }
+
+    @Override
+    public PageInfo<SysUser> findByPage(Integer pageNum, Integer pageSize, SysUserDto sysUserDto) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<SysUser> list = sysUserMapper.findByPage(sysUserDto);
+        PageInfo<SysUser> pageInfo = new PageInfo<>(list);
+        return pageInfo;
     }
 
     //已经没用了此方法

@@ -32,3 +32,9 @@ spzx:
       - /v3/**
       - /doc.html/**
 
+  minio:
+    endpointUrl: http://127.0.0.1:9000
+    accessKey: minioadmin
+    secreKey: minioadmin
+    bucketName: spzx-bucket
+
