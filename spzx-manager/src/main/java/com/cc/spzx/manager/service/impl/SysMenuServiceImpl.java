@@ -19,6 +19,11 @@ public class SysMenuServiceImpl implements SysMenuService {
     private SysMenuMapper sysMenuMapper;
 
 
+//    @Override
+//    public void deleteByRoleId(Long roleId) {
+//        sysMenuMapper.deleteByRoleId(roleId);
+//    }
+
     @Override
     public void removeById(Long id) {
         Integer count = sysMenuMapper.countByParentId(id);
@@ -47,6 +52,6 @@ public class SysMenuServiceImpl implements SysMenuService {
             return null;
         //递归实现Element-plus的树形菜单
         List<SysMenu> treeList = MenuHelper.buildTree(list);
-        return list;
+        return treeList;
     }
 }

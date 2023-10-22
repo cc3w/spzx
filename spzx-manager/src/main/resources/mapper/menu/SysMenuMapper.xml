@@ -49,7 +49,7 @@
     </update>
 
     <select id="findNodes" resultType="com.cc.spzx.model.entity.system.SysMenu">
-        select <include refid="columns"></include>
+        select <include refid="columns"/>
         from sys_menu where is_deleted = 0 order by sort_value
     </select>
     <select id="countByParentId" resultType="java.lang.Integer">

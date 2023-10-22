@@ -3,7 +3,6 @@ package com.cc.spzx.manager.service.impl;
 import com.cc.spzx.manager.mapper.SysRoleMapper;
 import com.cc.spzx.manager.mapper.SysRoleUserMapper;
 import com.cc.spzx.manager.service.SysRoleService;
-import com.cc.spzx.model.dto.system.AssignRoleDto;
 import com.cc.spzx.model.dto.system.SysRoleDto;
 import com.cc.spzx.model.entity.system.SysRole;
 import com.github.pagehelper.PageHelper;

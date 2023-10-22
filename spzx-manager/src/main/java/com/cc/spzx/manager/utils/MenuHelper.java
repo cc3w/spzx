@@ -25,7 +25,7 @@ public class MenuHelper {
         sysMenu.setChildren(new ArrayList<SysMenu>());
 
         for(SysMenu it : list) {
-            if(it.getParentId().longValue() == sysMenu.getId()) {
+            if(it.getParentId().longValue() == sysMenu.getId().longValue()) {
                 sysMenu.getChildren().add(dfs(it, list));
             }
         }

@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="实现文件上传，但是不能修改头像">
+    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="实现菜单的现实，添加，修改，删除">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysMenuMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysMenuMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysMenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysMenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysMenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysMenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/utils/MenuHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/utils/MenuHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/menu/SysMenuMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/menu/SysMenuMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -67,6 +74,9 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code_respository\spzx-parent\spzx-manager\src\main\resources" />
@@ -107,7 +117,7 @@
       <workItem from="1697678251787" duration="28223000" />
       <workItem from="1697765614809" duration="19912000" />
       <workItem from="1697870199973" duration="14627000" />
-      <workItem from="1697940378826" duration="5109000" />
+      <workItem from="1697940378826" duration="17773000" />
     </task>
     <task id="LOCAL-00001" summary="已实现登录，登录信息的获取，验证码，退出登录">
       <created>1697687899949</created>
@@ -144,7 +154,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697878360659</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="实现菜单的现实，添加，修改，删除">
+      <created>1697950312809</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1697950312809</updated>
+    </task>
+    <task id="LOCAL-00007" summary="实现菜单的现实，添加，修改，删除">
+      <created>1697950334006</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1697950334006</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +180,8 @@
     <MESSAGE value="实现了对用户角色的模糊查询，取消了对swagger的拦截" />
     <MESSAGE value="实现了添加，修改，删除用户" />
     <MESSAGE value="实现文件上传，但是不能修改头像" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现文件上传，但是不能修改头像" />
+    <MESSAGE value="实现菜单的现实，添加，修改，删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现菜单的现实，添加，修改，删除" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -6,6 +6,7 @@ import com.cc.spzx.model.entity.system.SysRole;
 import com.github.pagehelper.PageInfo;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public interface SysRoleService {
 

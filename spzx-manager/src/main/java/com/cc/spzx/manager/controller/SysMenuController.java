@@ -25,7 +25,7 @@ public class SysMenuController {
         return Result.build(null, ResultCodeEnum.SUCCESS);
     }
 
-    @PutMapping("/update")
+    @PutMapping("/updateById")
     public Result update(@RequestBody SysMenu sysMenu) {
         sysMenuService.update(sysMenu);
         return Result.build(null, ResultCodeEnum.SUCCESS);

@@ -44,4 +44,13 @@ public interface SysMenuService {
      **/
     void removeById(Long id);
 
+//    /**
+//     * desc 根据角色id删除菜单
+//     * date 2023/10/22
+//     * @author cc
+//     * @return
+//     **/
+//
+//    void deleteByRoleId(Long roleId);
+
 }
