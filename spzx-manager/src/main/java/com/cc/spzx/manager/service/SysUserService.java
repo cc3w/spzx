@@ -3,10 +3,13 @@ package com.cc.spzx.manager.service;
 import com.cc.spzx.model.dto.system.AssignRoleDto;
 import com.cc.spzx.model.dto.system.LoginDto;
 import com.cc.spzx.model.dto.system.SysUserDto;
+import com.cc.spzx.model.entity.system.SysMenu;
 import com.cc.spzx.model.entity.system.SysUser;
 import com.cc.spzx.model.vo.system.LoginVo;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 public interface SysUserService {
 
@@ -71,5 +74,4 @@ public interface SysUserService {
      * @return
      **/
     void doAssign(AssignRoleDto assignRoleDto);
-
 }

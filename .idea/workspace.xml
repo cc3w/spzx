@@ -6,17 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="实现文件上传，但是不能修改头像">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysRoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysRoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysRoleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/mapper/SysUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysRoleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/SysUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysRoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/SysUserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/role/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/role/SysRoleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-model/src/main/java/com/cc/spzx/model/dto/system/AssginMenuDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/cc/spzx/model/dto/system/AssignMenuDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-model/src/main/java/com/cc/spzx/model/dto/system/AssginRoleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-model/src/main/java/com/cc/spzx/model/dto/system/AssignRoleDto.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +107,7 @@
       <workItem from="1697678251787" duration="28223000" />
       <workItem from="1697765614809" duration="19912000" />
       <workItem from="1697870199973" duration="14627000" />
+      <workItem from="1697940378826" duration="5109000" />
     </task>
     <task id="LOCAL-00001" summary="已实现登录，登录信息的获取，验证码，退出登录">
       <created>1697687899949</created>
