@@ -1,6 +1,7 @@
 package com.cc.spzx.manager.service;
 
 import com.cc.spzx.model.entity.system.SysMenu;
+import com.cc.spzx.model.vo.system.SysMenuVo;
 
 import java.util.List;
 
@@ -43,6 +44,15 @@ public interface SysMenuService {
      * @return
      **/
     void removeById(Long id);
+
+    /**
+     * desc 根据用户查询菜单
+     * date 2023/10/23
+     * @author cc
+     * @return SysMenuVo>
+     **/
+
+    List<SysMenuVo> findMenus();
 
 //    /**
 //     * desc 根据角色id删除菜单

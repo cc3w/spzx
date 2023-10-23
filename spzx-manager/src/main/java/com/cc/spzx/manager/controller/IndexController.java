@@ -1,6 +1,7 @@
 package com.cc.spzx.manager.controller;
 
 
+import com.cc.spzx.manager.service.SysMenuService;
 import com.cc.spzx.manager.service.SysUserService;
 import com.cc.spzx.manager.service.ValidateCodeService;
 import com.cc.spzx.model.dto.system.LoginDto;
@@ -8,13 +9,15 @@ import com.cc.spzx.model.entity.system.SysUser;
 import com.cc.spzx.model.vo.common.Result;
 import com.cc.spzx.model.vo.common.ResultCodeEnum;
 import com.cc.spzx.model.vo.system.LoginVo;
+import com.cc.spzx.model.vo.system.SysMenuVo;
 import com.cc.spzx.model.vo.system.ValidateCodeVo;
 import com.cc.spzx.utils.AuthContextUtil;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(name = "用户接口")
 @RestController
@@ -26,6 +29,17 @@ public class IndexController {
 
     @Autowired
     private ValidateCodeService validateCodeService;
+
+    @Autowired
+    private SysMenuService sysMenuService;
+
+    @Operation(summary = "用户菜单")
+    @GetMapping("/menus")
+    public Result menus() {
+        List<SysMenuVo> list = sysMenuService.findMenus();
+        return Result.build(list, ResultCodeEnum.SUCCESS);
+    }
+
 
     @Operation(summary = "注销用户信息")
     @GetMapping("/logout")

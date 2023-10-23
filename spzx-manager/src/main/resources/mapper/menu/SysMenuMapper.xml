@@ -56,4 +56,11 @@
         select count(id) from sys_menu
         where parent_id = #{id} and is_deleted = 0
     </select>
+
+    <select id="selectListByUserId" resultType="com.cc.spzx.model.entity.system.SysMenu">
+        select distinct m.* from sys_menu m
+         inner join sys_role_menu rm on rm.menu_id = m.id
+         inner join sys_user_role ur on ur.role_id = rm.role_id
+        where ur.user_id=#{userId} and m.is_deleted = 0
+    </select>
 </mapper>

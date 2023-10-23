@@ -29,24 +29,28 @@ public class SysRoleController {
     @Autowired
     private SysUserService sysUserService;
 
+    @Operation(summary = "查询所有角色（包括选中和所有的）")
     @GetMapping("/findAllRoles/{userId}")
     public Result<Map<String, Object>> findAllRoles(@PathVariable("userId") Long userId) {
         HashMap<String, Object> map = sysRoleService.findAllRoles(userId);
         return Result.build(map, ResultCodeEnum.SUCCESS);
     }
 
+    @Operation(summary = "根据角色id进行删除")
     @DeleteMapping("/deleteById/{roleId}")
     public Result deleteById(@PathVariable("roleId") Long id) {
         sysRoleService.deleteById(id);
         return Result.build(null, ResultCodeEnum.SUCCESS);
     }
 
+    @Operation(summary = "修改角色")
     @PutMapping("/updateSysRole")
     public Result updateSysRole(@RequestBody SysRole sysRole) {
         sysRoleService.updateSysRole(sysRole);
         return Result.build(null, ResultCodeEnum.SUCCESS);
     }
 
+    @Operation(summary = "添加角色")
     @PostMapping("/saveSysRole")
     public Result saveSysRole(@RequestBody SysRole sysRole) {
         sysRoleService.saveSysRole(sysRole);
