@@ -48,6 +48,10 @@
         where id = #{id}
     </update>
 
+    <update id="updateSysRoleMenuIsHalf">
+        update sys_role_menu set is_half = 1 where menu_id = #{menuId}
+    </update>
+
     <select id="findNodes" resultType="com.cc.spzx.model.entity.system.SysMenu">
         select <include refid="columns"/>
         from sys_menu where is_deleted = 0 order by sort_value
@@ -62,5 +66,9 @@
          inner join sys_role_menu rm on rm.menu_id = m.id
          inner join sys_user_role ur on ur.role_id = rm.role_id
         where ur.user_id=#{userId} and m.is_deleted = 0
+    </select>
+
+    <select id="selectById" resultType="com.cc.spzx.model.entity.system.SysMenu">
+        select <include refid="columns"/> from sys_menu where id = #{parentId}
     </select>
 </mapper>

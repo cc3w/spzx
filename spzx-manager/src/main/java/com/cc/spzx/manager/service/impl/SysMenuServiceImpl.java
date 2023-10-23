@@ -2,7 +2,9 @@ package com.cc.spzx.manager.service.impl;
 
 import com.cc.spzx.common.exception.ccException;
 import com.cc.spzx.manager.mapper.SysMenuMapper;
+import com.cc.spzx.manager.mapper.SysRoleMenuMapper;
 import com.cc.spzx.manager.service.SysMenuService;
+import com.cc.spzx.manager.service.SysRoleMenuService;
 import com.cc.spzx.manager.utils.MenuHelper;
 import com.cc.spzx.model.entity.system.SysMenu;
 import com.cc.spzx.model.entity.system.SysUser;
@@ -23,10 +25,9 @@ public class SysMenuServiceImpl implements SysMenuService {
     private SysMenuMapper sysMenuMapper;
 
 
-//    @Override
-//    public void deleteByRoleId(Long roleId) {
-//        sysMenuMapper.deleteByRoleId(roleId);
-//    }
+    @Autowired
+    private SysRoleMenuMapper sysRoleMenuMapper;
+
 
     @Override
     public List<SysMenuVo> findMenus() {
@@ -59,6 +60,21 @@ public class SysMenuServiceImpl implements SysMenuService {
     @Override
     public void save(SysMenu sysMenu) {
         sysMenuMapper.save(sysMenu);
+
+        updateSysRoleMenuIsHalf(sysMenu);
+
+    }
+
+    private void updateSysRoleMenuIsHalf(SysMenu sysMenu) {
+        //查找是否为父类菜单
+        SysMenu sysMenu1 = sysMenuMapper.selectById(sysMenu.getParentId());
+
+        //将is_half改为半开状态 1
+        if(sysMenu1 != null) {
+            sysMenuMapper.updateSysRoleMenuIsHalf(sysMenu1.getId());
+            //递归调用
+            updateSysRoleMenuIsHalf(sysMenu1);
+        }
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.cc.spzx.manager.service;
 
 import com.cc.spzx.model.dto.system.AssignMenuDto;
+import com.cc.spzx.model.entity.system.SysMenu;
 
 import java.util.Map;
 
@@ -14,6 +15,14 @@ public interface SysRoleMenuService {
      **/
     Map<String, Object> findSysRoleMenuByRoleId(Long roleId);
 
+    /**
+     * desc 指定菜单
+     * date 2023/10/23
+     * @author cc
+     * @return
+     **/
+
     void doAssign(AssignMenuDto assignMenuDto);
+
 
 }

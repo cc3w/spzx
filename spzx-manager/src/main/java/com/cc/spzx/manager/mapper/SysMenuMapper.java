@@ -21,4 +21,8 @@ public interface SysMenuMapper {
 
     List<SysMenu> selectListByUserId(Long id);
 
+    SysMenu selectById(Long parentId);
+
+    void updateSysRoleMenuIsHalf(Long id);
+
 }

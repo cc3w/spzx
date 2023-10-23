@@ -11,6 +11,7 @@
             (#{roleId} , #{menuInfo.id} , now() , now() , 0 , #{menuInfo.isHalf})
         </foreach>
     </insert>
+
     <delete id="deleteByRoleId">
         delete from sys_role_menu where role_id = #{roleId}
     </delete>
