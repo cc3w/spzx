@@ -43,6 +43,7 @@ public class FileUploadServiceImpl implements FileUploadService {
             //防止文件名称相同覆盖之前的文件，让每个文件拥有唯一的名字
             String uuid = UUID.randomUUID().toString().replace("-", "");
             //20230801/443e1e772bef482c95be28704bec58a901.jpg
+            //获取上传文件的原始文件名
             String fileName = dateDir + uuid+file.getOriginalFilename();
             System.out.println(fileName);
 

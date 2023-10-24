@@ -10,4 +10,9 @@ public interface CategoryMapper {
     List<Category> findByParentId(Long parentId);
 
     Integer countByParentId(Long parentId);
+
+    List<Category> selectAll();
+
+    void saveData(List cachedDataList);
+
 }
