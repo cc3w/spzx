@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cc.spzx.manager.mapper.ProductSpecMapper">
+
+    <sql id="columns">
+        id,spec_name,spec_value,create_time,update_time,is_deleted
+    </sql>
+
+
+    <insert id="save">
+        insert into product_spec(
+                                 id,
+                                 spec_name,
+                                 spec_value,
+                                 create_time,
+                                 update_time,
+                                 is_deleted
+        ) values (
+                  #{id},
+                  #{specName},
+                  #{specValue},
+                  now(),
+                  now(),
+                  0
+                         )
+    </insert>
+
+
+    <update id="deleteById">
+        update product_spec
+        set is_deleted = 1, update_time = now()
+        where id = #{id};
+    </update>
+
+    <update id="updateById">
+        update product_spec set
+                               <if test="specName != null and specName != ''">
+                                   spec_name = #{specName},
+                               </if>
+                                <if test="specValue != null and specValue != ''">
+                                    spec_value = #{specValue},
+                                </if>
+                                update_time = now()
+                                where id = #{id}
+    </update>
+
+    <select id="findeByPage" resultType="com.cc.spzx.model.entity.product.ProductSpec">
+        select <include refid="columns"/>
+        from product_spec
+        <where>
+            <if test="specName != null and specValue != ''">
+                spec_name = #{specName}
+            </if>
+            <if test="specValue != null and specValue != ''">
+                and spec_value = #{specValue}
+            </if>
+            and is_deleted = 0
+        </where>
+        order by id desc
+    </select>
+</mapper>
