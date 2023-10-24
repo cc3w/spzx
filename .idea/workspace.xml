@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="实现了导入文件和导出文件">
+    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="实现了品牌的增删改查">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/BrandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/BrandService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/BrandServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/category/categoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/resources/mapper/category/CategoryMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -128,7 +132,7 @@
       <workItem from="1697765614809" duration="19912000" />
       <workItem from="1697870199973" duration="14627000" />
       <workItem from="1697940378826" duration="17893000" />
-      <workItem from="1698029150531" duration="35416000" />
+      <workItem from="1698029150531" duration="48677000" />
     </task>
     <task id="LOCAL-00001" summary="已实现登录，登录信息的获取，验证码，退出登录">
       <created>1697687899949</created>
@@ -207,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698136713636</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="实现了品牌的增删改查">
+      <created>1698144741564</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698144741564</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +235,8 @@
     <MESSAGE value="完善了swagger接口注释，实现了动态菜单分配" />
     <MESSAGE value="用懒加载实现了分类接口" />
     <MESSAGE value="实现了导入文件和导出文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了导入文件和导出文件" />
+    <MESSAGE value="实现了品牌的增删改查" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现了品牌的增删改查" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

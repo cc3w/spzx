@@ -30,6 +30,12 @@ public class BrandServiceImpl implements BrandService {
     }
 
     @Override
+    public List<Brand> findAll() {
+        List<Brand> brandList = brandMapper.findByPage();
+        return brandList;
+    }
+
+    @Override
     public void deleteById(Long id) {
         brandMapper.deleteById(id);
     }

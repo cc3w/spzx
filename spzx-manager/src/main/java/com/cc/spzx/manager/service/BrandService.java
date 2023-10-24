@@ -3,14 +3,16 @@ package com.cc.spzx.manager.service;
 import com.cc.spzx.model.entity.product.Brand;
 import com.github.pagehelper.PageInfo;
 
+import java.util.List;
+
 public interface BrandService {
+
     /**
      * desc 显示品牌列表
      * date 2023/10/24
      * @author cc
      * @return Brand>
      **/
-
     PageInfo<Brand> findByPage(Integer page, Integer limit);
 
     /**
@@ -28,7 +30,6 @@ public interface BrandService {
      * @author cc
      * @return
      **/
-
     void updateById(Brand brand);
 
     /**
@@ -39,4 +40,12 @@ public interface BrandService {
      **/
     void deleteById(Long id);
 
+    /**
+     * desc 查询所有品牌
+     * date 2023/10/24
+     * @author cc
+     * @return Brand>
+     **/
+
+    List<Brand> findAll();
 }

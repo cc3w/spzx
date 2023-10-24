@@ -10,6 +10,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Tag(name = "品牌接口")
 @RestController
 @RequestMapping(value="/admin/product/brand")
@@ -17,6 +19,13 @@ public class BrandController {
 
     @Autowired
     private BrandService brandService;
+
+    @Operation(summary = "查询所有品牌")
+    @GetMapping("/findAll")
+    public Result findAll() {
+        List<Brand> list = brandService.findAll();
+        return Result.build(list, ResultCodeEnum.SUCCESS);
+    }
 
     @Operation(summary = "删除品牌")
     @DeleteMapping("/deleteById/{id}")
