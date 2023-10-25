@@ -32,6 +32,12 @@ public class ProductSpecServiceImpl implements ProductSpecService {
     }
 
     @Override
+    public List<ProductSpec> findAll() {
+        List<ProductSpec> productList = productSpecMapper.findAll();
+        return productList;
+    }
+
+    @Override
     public PageInfo<ProductSpec> findByPage(Integer page, Integer limit, ProductSpec productSpec) {
         PageHelper.startPage(page, limit);
         List<ProductSpec> productSpecList = productSpecMapper.findeByPage();

@@ -1,8 +1,11 @@
 package com.cc.spzx.manager.service;
 
 import com.cc.spzx.model.dto.product.CategoryBrandDto;
+import com.cc.spzx.model.entity.product.Brand;
 import com.cc.spzx.model.entity.product.CategoryBrand;
 import com.github.pagehelper.PageInfo;
+
+import java.util.List;
 
 public interface CategoryBrandService {
     /**
@@ -39,4 +42,12 @@ public interface CategoryBrandService {
 
     void deleteById(Long id);
 
+    /**
+     * desc 根据分类查询所有品牌
+     * date 2023/10/25
+     * @author cc
+     * @return
+     **/
+
+    List<Brand> findBrandByCategoryId(Long categoryId);
 }

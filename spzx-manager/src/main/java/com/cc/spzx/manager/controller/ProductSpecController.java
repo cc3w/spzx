@@ -11,6 +11,8 @@ import org.apache.logging.log4j.util.PerformanceSensitive;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Tag(name = "商品规格管理")
 @RestController
 @RequestMapping("/admin/product/productSpec")
@@ -18,6 +20,14 @@ public class ProductSpecController {
 
     @Autowired
     private ProductSpecService productSpecService;
+
+
+    @Operation(summary = "查询所有商品规格")
+    @GetMapping("/findAll")
+    public Result findAll() {
+        List<ProductSpec> productSpecList = productSpecService.findAll();
+        return Result.build(productSpecList, ResultCodeEnum.SUCCESS);
+    }
 
     @Operation(summary = "删除商品")
     @DeleteMapping("/deleteById/{id}")
@@ -27,7 +37,7 @@ public class ProductSpecController {
     }
 
     @Operation(summary = "修改商品")
-    @PutMapping("updateById")
+    @PutMapping("/updateById")
     public Result updateById(@RequestBody ProductSpec productSpec) {
         productSpecService.updateById(productSpec);
         return Result.build(null, ResultCodeEnum.SUCCESS);

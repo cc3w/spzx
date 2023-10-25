@@ -15,4 +15,6 @@ public interface ProductSpecMapper {
 
     List<ProductSpec> findeByPage();
 
+    List<ProductSpec> findAll();
+
 }

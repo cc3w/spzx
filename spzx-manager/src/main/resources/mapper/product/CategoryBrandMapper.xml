@@ -52,4 +52,11 @@
         </where>
         order by cb.id desc
     </select>
+
+    <select id="findBrandByCategoryId" resultType="com.cc.spzx.model.entity.product.Brand">
+        select b.*
+        from category_brand cb inner join brand b on cb.brand_id = b.id
+        where category_id = #{categoryId} and cb.is_deleted = 0
+        order by cb.id desc
+    </select>
 </mapper>

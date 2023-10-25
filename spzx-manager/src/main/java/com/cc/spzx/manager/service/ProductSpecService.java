@@ -3,6 +3,8 @@ package com.cc.spzx.manager.service;
 import com.cc.spzx.model.entity.product.ProductSpec;
 import com.github.pagehelper.PageInfo;
 
+import java.util.List;
+
 public interface ProductSpecService {
     /**
      * desc 删除商品
@@ -36,4 +38,13 @@ public interface ProductSpecService {
      * @return ProductSpec>
      **/
     PageInfo<ProductSpec> findByPage(Integer page, Integer limit, ProductSpec productSpec);
+
+    /**
+     * desc 查询所有商品规格
+     * date 2023/10/25
+     * @author cc
+     * @return null
+     **/
+
+    List<ProductSpec> findAll();
 }

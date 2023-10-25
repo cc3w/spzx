@@ -2,6 +2,7 @@ package com.cc.spzx.manager.controller;
 
 import com.cc.spzx.manager.service.CategoryBrandService;
 import com.cc.spzx.model.dto.product.CategoryBrandDto;
+import com.cc.spzx.model.entity.product.Brand;
 import com.cc.spzx.model.entity.product.CategoryBrand;
 import com.cc.spzx.model.vo.common.Result;
 import com.cc.spzx.model.vo.common.ResultCodeEnum;
@@ -11,6 +12,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Tag(name = "品牌分类接口")
 @RestController
 @RequestMapping("/admin/product/categoryBrand")
@@ -18,6 +21,13 @@ public class CategoryBrandController {
 
     @Autowired
     private CategoryBrandService categoryBrandService;
+
+    @Operation(summary = "根据分类查询品牌")
+    @GetMapping("/findBrandByCategoryId/{categoryId}")
+    public Result findBrandByCategoryId(@PathVariable("categoryId") Long categoryId) {
+        List<Brand> brandList = categoryBrandService.findBrandByCategoryId(categoryId);
+        return Result.build(brandList, ResultCodeEnum.SUCCESS);
+    }
 
     @Operation(summary = "删除品牌分类")
     @DeleteMapping("/deleteById/{id}")

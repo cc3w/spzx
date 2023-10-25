@@ -4,6 +4,7 @@ import com.cc.spzx.manager.mapper.CategoryBrandMapper;
 import com.cc.spzx.manager.service.CategoryBrandService;
 import com.cc.spzx.manager.service.CategoryService;
 import com.cc.spzx.model.dto.product.CategoryBrandDto;
+import com.cc.spzx.model.entity.product.Brand;
 import com.cc.spzx.model.entity.product.CategoryBrand;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -30,6 +31,12 @@ public class CategoryBrandServiceImpl implements CategoryBrandService {
     @Override
     public void updateById(CategoryBrand categoryBrand) {
         categoryBrandMapper.updateById(categoryBrand);
+    }
+
+    @Override
+    public List<Brand> findBrandByCategoryId(Long categoryId) {
+        List<Brand> brandList = categoryBrandMapper.findBrandByCategoryId(categoryId);
+        return brandList;
     }
 
     @Override
