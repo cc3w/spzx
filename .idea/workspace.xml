@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="实现了商品信息的增删改查">
+    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="添加了日志管理，包括自定义注解，不同模块下调用mapper，自定义EnableLogAspect导入spring容器中">
+      <change afterPath="$PROJECT_DIR$/spzx-common/common-log/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/ManagerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/ManagerApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/ProductSpecController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/ProductSpecController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/BrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/BrandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysRoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/controller/SysUserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
         <option value="Interface" />
       </list>
@@ -42,32 +50,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Notification.DisplayName-DoNotAsk-Lombok plugin&quot;: &quot;Lombok integration problem&quot;,
-    &quot;Notification.DoNotAsk-Lombok plugin&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/code_respository/spzx-parent&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;5c2cd6d551bd1bdcf55331f1ccb693a5&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Notification.DisplayName-DoNotAsk-Lombok plugin": "Lombok integration problem",
+    "Notification.DoNotAsk-Lombok plugin": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/code_respository/spzx-parent",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "spring.configuration.checksum": "92e922b753cb273187eccfe73a602e0c",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -132,7 +141,8 @@
       <workItem from="1697940378826" duration="17893000" />
       <workItem from="1698029150531" duration="51486000" />
       <workItem from="1698201092030" duration="24149000" />
-      <workItem from="1698283693032" duration="6410000" />
+      <workItem from="1698283693032" duration="10257000" />
+      <workItem from="1698305774953" duration="4701000" />
     </task>
     <task id="LOCAL-00001" summary="已实现登录，登录信息的获取，验证码，退出登录">
       <created>1697687899949</created>
@@ -239,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698246420501</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="实现了订单信息的柱状图显示">
+      <created>1698294636450</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1698294636450</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +277,9 @@
     <MESSAGE value="实现了分类品牌的增删改查" />
     <MESSAGE value="实现了商品的增删改查" />
     <MESSAGE value="实现了商品信息的增删改查" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现了商品信息的增删改查" />
+    <MESSAGE value="实现了订单信息的柱状图显示" />
+    <MESSAGE value="添加了日志管理，包括自定义注解，不同模块下调用mapper，自定义EnableLogAspect导入spring容器中" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了日志管理，包括自定义注解，不同模块下调用mapper，自定义EnableLogAspect导入spring容器中" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

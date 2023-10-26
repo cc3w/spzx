@@ -1,6 +1,7 @@
 package com.cc.spzx.manager.controller;
 
 import ch.qos.logback.core.pattern.util.RegularEscapeUtil;
+import com.cc.spzx.common.log.annotation.Log;
 import com.cc.spzx.manager.service.SysRoleService;
 import com.cc.spzx.manager.service.SysUserService;
 import com.cc.spzx.model.dto.system.AssignRoleDto;
@@ -50,6 +51,7 @@ public class SysRoleController {
         return Result.build(null, ResultCodeEnum.SUCCESS);
     }
 
+    @Log(title = "角色添加",businessType = 0) //添加Log注解，设置属性
     @Operation(summary = "添加角色")
     @PostMapping("/saveSysRole")
     public Result saveSysRole(@RequestBody SysRole sysRole) {

@@ -1,5 +1,7 @@
 package com.cc.spzx.manager.controller;
 
+import com.cc.spzx.common.log.annotation.Log;
+import com.cc.spzx.common.log.enums.OperatorType;
 import com.cc.spzx.manager.service.BrandService;
 import com.cc.spzx.model.entity.product.Brand;
 import com.cc.spzx.model.vo.common.Result;
@@ -49,6 +51,7 @@ public class BrandController {
     }
 
 
+    @Log(title = "品牌列表",businessType = 0,operatorType = OperatorType.MANAGE)
     @Operation(summary = "品牌列表")
     @GetMapping("/{page}/{limit}")
     public Result findByPage(@PathVariable("page") Integer page, @PathVariable("limit") Integer limit) {

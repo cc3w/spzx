@@ -1,6 +1,7 @@
 package com.cc.spzx.manager.controller;
 
 import com.cc.spzx.common.exception.ccException;
+import com.cc.spzx.common.log.annotation.Log;
 import com.cc.spzx.manager.service.SysUserService;
 import com.cc.spzx.model.dto.system.AssignRoleDto;
 import com.cc.spzx.model.dto.system.SysUserDto;
@@ -36,7 +37,6 @@ public class SysUserController {
         PageInfo<SysUser> pageInfo = sysUserService.findByPage(pageNum, pageSize, sysUserDto);
         return Result.build(pageInfo, ResultCodeEnum.SUCCESS);
     }
-
 
     @Operation(summary = "添加用户")
     @PostMapping("/saveSysUser")
