@@ -26,7 +26,7 @@ public class ProductItemVo {
    private List<String> detailsImageUrlList;
 
    @Schema(description = "商品规格信息")
-   private JSONArray specValueList;
+   private JSONArray specValueList; //JSONArray是一种JSON数据格式，相当于一个“List”，可以动态扩展，并且可以存放不同数据结构的数据
 
    @Schema(description = "商品规格对应商品skuId信息")
    private Map<String,Object> skuSpecValueMap;
