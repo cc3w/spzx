@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="使用了nacos，gateway，实现了查看商品的信息">
+    <list default="true" id="e3a50e99-cad3-445d-a055-5a21ef98fb41" name="Changes" comment="用阿里云实现了发送验证码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/cc/spzx/common/config/Knife4jConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-service/src/main/java/com/cc/spzx/common/config/Knife4jConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-common/common-util/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-common/common-util/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-server-gateway/src/main/resources/application-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-server-gateway/src/main/resources/application-dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-service/service-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-service/service-product/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-service/service-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-service/service-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spzx-service/service-user/src/main/java/com/cc/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spzx-service/service-user/src/main/java/com/cc/spzx/user/service/Impl/SmsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/spzx-service/service-user/src/main/java/com/cc/spzx/user/service/Impl/SmsServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +18,8 @@
       <list>
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -71,8 +65,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "7b5ab96d174cc40bdd9183bb96a0aeac",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "dc5e3943ec0e4d68013ea5c49333febd",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -166,8 +160,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.UserApplication" />
-        <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Spring Boot.ProductApplication" />
+        <item itemvalue="Spring Boot.GatewayApplication" />
         <item itemvalue="Application.EasyExcelTest" />
       </list>
     </recent_temporary>
@@ -193,7 +187,8 @@
       <workItem from="1698283693032" duration="10257000" />
       <workItem from="1698305774953" duration="9030000" />
       <workItem from="1698323376645" duration="2918000" />
-      <workItem from="1698370056068" duration="30598000" />
+      <workItem from="1698370056068" duration="31711000" />
+      <workItem from="1698458158991" duration="8132000" />
     </task>
     <task id="LOCAL-00001" summary="已实现登录，登录信息的获取，验证码，退出登录">
       <created>1697687899949</created>
@@ -335,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698410797474</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="用阿里云实现了发送验证码">
+      <created>1698425744190</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1698425744190</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,7 +373,8 @@
     <MESSAGE value="添加了日志管理，包括自定义注解，不同模块下调用mapper，自定义EnableLogAspect导入spring容器中" />
     <MESSAGE value="更新了service-product模块，实现了分类，热销，以及树型展示分类功能" />
     <MESSAGE value="使用了nacos，gateway，实现了查看商品的信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="使用了nacos，gateway，实现了查看商品的信息" />
+    <MESSAGE value="用阿里云实现了发送验证码" />
+    <option name="LAST_COMMIT_MESSAGE" value="用阿里云实现了发送验证码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -379,7 +382,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/spzx-manager/src/main/java/com/cc/spzx/manager/service/OrderInfoService.java</url>
           <line>13</line>
-          <properties class="com.cc.spzx.manager.service.OrderInfoService" method="getOrderStatisticsData">
+          <properties class="com.cc.spzx.manager.service.OrderInfoService">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
