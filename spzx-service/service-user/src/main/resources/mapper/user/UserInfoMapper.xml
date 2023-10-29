@@ -39,9 +39,11 @@
                  )
     </insert>
 
-    <select id="getUerName" resultType="com.cc.spzx.model.entity.user.UserInfo">
+    <select id="getByUsername" resultType="com.cc.spzx.model.entity.user.UserInfo">
         select <include refid="columns"/>
         from user_info
         where username = #{username}
     </select>
+
+
 </mapper>

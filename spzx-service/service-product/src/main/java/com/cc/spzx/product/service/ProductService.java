@@ -35,4 +35,13 @@ public interface ProductService {
      **/
 
     ProductItemVo item(Long skuId);
+
+    /**
+     * desc 根据skuId查询product_sku表
+     * date 2023/10/29
+     * @author cc
+     * @return ProductSku
+     **/
+    ProductSku getBySkuId(Long skuId);
+
 }

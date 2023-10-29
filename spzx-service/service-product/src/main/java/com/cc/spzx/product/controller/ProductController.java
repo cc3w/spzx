@@ -8,6 +8,7 @@ import com.cc.spzx.model.vo.h5.ProductItemVo;
 import com.cc.spzx.product.service.ProductService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.simpleframework.xml.Path;
 import org.springframework.aot.generate.InMemoryGeneratedFiles;
@@ -39,5 +40,12 @@ public class ProductController {
     public Result item(@PathVariable("skuId") Long skuId) {
         ProductItemVo productItemVo = productService.item(skuId);
         return Result.build(productItemVo, ResultCodeEnum.SUCCESS);
+    }
+
+    @Operation(summary = "获取商品sku信息")
+    @GetMapping("getBySkuId/{skuId}")
+    public ProductSku getBySkuId(@PathVariable("skuId") Long skuId) {
+        ProductSku productSku = productService.getBySkuId(skuId);
+        return productSku;
     }
 }

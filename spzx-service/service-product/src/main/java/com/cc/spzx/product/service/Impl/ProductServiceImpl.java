@@ -33,6 +33,11 @@ public class ProductServiceImpl implements ProductService {
     private ProductDetailsMapper productDetailsMapper;
 
     @Override
+    public ProductSku getBySkuId(Long skuId) {
+        return productSkuMapper.getById(skuId);
+    }
+
+    @Override
     public ProductItemVo item(Long skuId) {
         ProductItemVo productItemVo = new ProductItemVo();
         //查询商品sku信息

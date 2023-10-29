@@ -2,6 +2,11 @@ server:
   port: 8500
 #  微服务名称
 spring:
+  data:
+    redis:
+      host: 192.168.44.136
+      port: 6379
+
   application:
     name: spzx-server-gateway
   cloud:
@@ -28,11 +33,22 @@ spring:
       routes:
         - id: service-product
 #          负载均衡
+#          商品信息
           uri: lb://service-product
           predicates:
             - Path=/*/product/**
-
+#       用户信息
         - id: service-user
           uri: lb://service-user
           predicates:
             - Path=/*/user/**
+#      购物车
+        - id: service-cart
+          uri: lb://service-cart
+          predicates:
+            - Path=/api/order/cart/**
+#         订单
+        - id: service-order
+          uri: lb://service-order
+          predicates:
+            - Path=/api/order/orderInfo/**
